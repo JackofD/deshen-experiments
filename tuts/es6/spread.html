@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .jump{
+        font-size: 60px;
+        width: 50%;
+        text-align: center;
+        margin: 0 auto;
+        cursor: pointer;
+      }
+      .jump span{
+        transition: all 0.3s;
+        display: inline-block;
+      }
+      .jump span:hover{
+        transform: scale(2) rotate(-10deg);
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    The spread operator can "spread" and array out into it's elements. Below, it is used to create a new array from two other arrays.
+    You can also add other elements to the array in this process.
+
+    <br><br>
+
+    <h2 class="jump">Spreads!</h2>
+
+    <script>
+    
+      // The spread operator
+      const cheese = ['Cheese', 'gorgonzola', 'cheddar', 'camembert'];
+      const base = ['thin', 'puffed', 'deepdish'];
+
+      const combos = [...cheese, 'anchovies', ...base];
+      console.log(combos);
+      
+      const deepdish = {
+        pizzaName: 'Deep Dish',
+        size: "medium",
+        ingredients: ['Marinara', 'Italian Sausage' ,'Dough' ,'Cheese']
+      };
+      
+      // Spread exercise
+      const jumpText = document.querySelector('.jump');
+
+      const spans = spanWrap(jumpText.textContent);
+
+      jumpText.innerHTML = spans;
+
+      function spanWrap(word){
+        console.log(word);
+        // What I did...
+        // let letterArray = [...word];
+        // console.log(letterArray);
+        // for(letter of letterArray){
+        //   console.log(letter);
+        //   letter = `<span>${letter}</span>`;
+        // }
+
+        // What Wes Bos did...
+        return [...word].map(letter => `<span>${letter}</span>`).join('');
+      }
+    </script>
+  </body>
+</html>
