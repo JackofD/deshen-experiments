@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Promises</title>
+  </head>
+  <body>
+
+    <script>
+    
+      // trying to access github here...
+      const repoPromise = fetch('https://api.github.com/users/jackofd/repos');
+
+      repoPromise
+      .then(data => data.json())
+      .then(data => {console.log(data)})
+      .catch(((err) => {
+        console.error(err);
+      }));
+
+    </script>
+  </body>
+</html>
