@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    For OF loop cannot be used with objects. In this case you can use object.entries()
+    <br>
+    If you don't want to use entries, there is the For In loop.
+    <script>
+      const cuts = ['Burger', 'Ribs', 'Sausage', 'Meatball'];
+      
+      //destructure the array of cuts - entries gives us an iterator
+      for (const [i, cut] of cuts.entries()) {
+        console.log(`${cut} is the ${i + 1}th item`);
+      }
+      
+      // Array.of(21, 34, 678, 543, 78) creates an array with the arguments that you pass it.
+      // Array.from(arguments) also creates an array from the argument you pass it, but the argument can be something like an object.
+    </script>
+  </body>
+</html>
