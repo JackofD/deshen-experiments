@@ -9,6 +9,7 @@
     
       // trying to access github here...
       const repoPromise = fetch('https://api.github.com/users/jackofd/repos');
+      //const repoPromise = fetch('http://pokeapi.co/api/v2/pokemon/83/');
 
       repoPromise
       .then(data => data.json())
